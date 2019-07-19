@@ -1,6 +1,7 @@
 <?php 
 class Cat
 {
+	//We define the properties
 	private $name;
 	
 	private $age;
@@ -11,6 +12,7 @@ class Cat
 
 	private $race;
 	
+	//creae consturctor
 	public function __construct($name, $age, $color, $sex, $race)
 	{
 		$this->name = $name;
@@ -20,6 +22,7 @@ class Cat
 		$this->race = $race;
 	}
 	
+	//Create the Setters for each
 	private function setName($name){
 		if($name > 3 && $name < 20) {
 			$this->name = $name;
@@ -28,7 +31,7 @@ class Cat
 			echo "enter a name between 3 and 20 charachter.";
 		}
 	}
-	
+	//Create the Setters for age
 	private function setAge($age){
 		if(is_int($age)) {
 			$this->age = $age;
@@ -37,7 +40,7 @@ class Cat
 			echo "insert a member.";
 		}
 	}
-	
+	//Create the Setters for color
 	private function setColor($color, $name){
 		if($color> 3 && $name < 10) {
 			$this->color = $color;
@@ -46,7 +49,7 @@ class Cat
 			echo "Enter a name between 3 and 10 charactère.";
 		}
 	}
-
+	//Create the Setters for sex
 	private function setSex($sex){
 		if($sex == 'male' || $sex == 'female') {
 			$this->sex = $sex;
@@ -56,7 +59,7 @@ class Cat
 		}
 	}
 	
-	 
+	 //Create the Setters for the race
 	private function setRace($race){
 		if($race > 3 && $race < 20) {
 			$this->race = $race;
@@ -65,6 +68,8 @@ class Cat
 			echo "Enter a name between 3 and 10 charactère.";
 		}
 	}
+
+	// Here we give the Getters
 	
 	public function getName(){
 		return $this->name;
@@ -86,6 +91,7 @@ class Cat
 		return $this->race;
 	}
 
+	
 	public function getInfos(){
 		 $info = array(
 			"Cat name :".$this->getName().'.',

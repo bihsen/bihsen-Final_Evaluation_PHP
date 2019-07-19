@@ -2,6 +2,9 @@
 require_once('connect.php');
 $order = '';
 $errors = array();
+
+	//Basic checking on the inputs
+	// there was a missing closing parantheses
 if (isset($_GET['order']) && isset($_GET['column'])) {
 	if ($_GET['column'] == 'lastname') {
 		$order = ' ORDER BY lastname';
@@ -34,6 +37,9 @@ if (!empty($_POST)) {
 		$errors[] = 'La ville ne peut être vide';
 	}
 	
+	// if there is not errors we initiate
+
+	//ther was missing closing brackets here
 	if (count($errors) == 0) {
 		
 		$insertUser = $db->prepare('INSERT INTO users (gender, firstname, lastname, email, birthdate, city) VALUES(:gender, :firstname, :lastname, :email, :birthdate, :city)');
@@ -51,6 +57,8 @@ if (!empty($_POST)) {
 	}
 }
 
+
+	//Prepare the query
 $queryUsers = $db->prepare('SELECT * FROM users' . $order);
 if ($queryUsers->execute()) {
 	$users = $queryUsers->fetchAll();
