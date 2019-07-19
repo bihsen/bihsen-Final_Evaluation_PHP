@@ -34,7 +34,7 @@ if (!empty($_POST)) {
 		$insert->bindValue(4, $_POST['color']);
 
 		if ($insert->execute()) {
-			echo 'Movie successfully addded !';
+			echo 'Car successfully addded !';
 		} else {
 			echo 'Error inserting into the DB';
 		}

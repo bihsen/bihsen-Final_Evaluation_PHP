@@ -5,7 +5,7 @@
 $query = ' SELECT articles.article_id , users.firstname, users.lastname 
 FROM  articles
 INNER JOIN  users
-ON articles.id_user = users.user_id
+ON articles.id_user = users.id
  WHERE article_id= 10';
  */
 
